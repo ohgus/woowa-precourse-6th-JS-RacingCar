@@ -11,12 +11,7 @@ class RacingGameView {
 
     validateCarNames(carNames);
 
-    const cars = {};
-    carNames.forEach((name) => {
-      cars[name] = '';
-    });
-
-    return cars;
+    return carNames;
   }
 
   async inputRaceCount() {
