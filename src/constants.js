@@ -14,3 +14,14 @@ export const ERROR_MESSAGES = {
   carNameDuplicate: '[ERROR] 차 이름은 중복될 수 없습니다.',
   raceCount: `[ERROR] 시도할 횟수는 ${MIN_RACE_COUNT}회 이상 ${MAX_RACE_COUNT}회 이하의 숫자만 입력할 수 있습니다.`,
 };
+
+export const MESSAGES = {
+  inputCarNames:
+    '경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n',
+  inputRaceCount: '시도할 횟수는 몇 회인가요?\n',
+  resultMessage: '\n실행 결과',
+  winnersMessage: '최종 우승자 : ',
+};
+
+export const RANDOM_NUMBER_RANGE = { min: 0, max: 9 };
+export const MOVE_THRESHOLD = 4;

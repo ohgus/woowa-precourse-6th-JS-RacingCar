@@ -1,4 +1,5 @@
 import { Random } from '@woowacourse/mission-utils';
+import { RANDOM_NUMBER_RANGE, MOVE_THRESHOLD } from './constants.js';
 
 class Car {
   constructor(name) {
@@ -7,9 +8,12 @@ class Car {
   }
 
   move() {
-    const randomNumber = Random.pickNumberInRange(0, 9);
+    const randomNumber = Random.pickNumberInRange(
+      RANDOM_NUMBER_RANGE.min,
+      RANDOM_NUMBER_RANGE.max
+    );
 
-    if (randomNumber >= 4) {
+    if (randomNumber >= MOVE_THRESHOLD) {
       this.position += 1;
     }
   }
