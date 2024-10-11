@@ -24,7 +24,7 @@ class RacingGameView {
   }
 
   printResultMessage() {
-    Console.print('실행 결과');
+    Console.print('\n실행 결과');
   }
 
   printRaceResults(results) {
