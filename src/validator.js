@@ -21,3 +21,11 @@ export const validateCarNames = (carNames) => {
     throw new Error('[ERROR] 차 이름은 중복될 수 없습니다.');
   }
 };
+
+export const validateRaceCount = (raceCount) => {
+  if (raceCount < 1 || isNaN(raceCount) || raceCount > 10) {
+    throw new Error(
+      '[ERROR] 시도할 횟수는 1회 이상 10회 이하의 숫자만 입력할 수 있습니다.'
+    );
+  }
+};

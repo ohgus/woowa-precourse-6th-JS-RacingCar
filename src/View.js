@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import { validateCarNames } from './validator.js';
+import { validateCarNames, validateRaceCount } from './validator.js';
 
 class RacingGameView {
   async inputCarNames() {
@@ -22,6 +22,8 @@ class RacingGameView {
   async inputRaceCount() {
     const input = await Console.readLineAsync('시도할 횟수는 몇 회인가요?\n');
     const raceCount = parseInt(input);
+
+    validateRaceCount(raceCount);
 
     return raceCount;
   }
