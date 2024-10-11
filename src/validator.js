@@ -1,33 +1,44 @@
+import {
+  MIN_CAR_NAME_LENGTH,
+  MAX_CAR_NAME_LENGTH,
+  MIN_CAR_COUNT,
+  MAX_CAR_COUNT,
+  MIN_RACE_COUNT,
+  MAX_RACE_COUNT,
+  ENGLISH_REGEX,
+  ERROR_MESSAGES,
+} from './constants.js';
+
 const isValidCarName = (carName) => {
-  const englishRegex = /^[a-zA-Z]+$/;
-
-  if (!englishRegex.test(carName)) {
-    throw new Error(
-      '[ERROR] 차 이름은 영어로만 입력해주세요. 공백과 특수문자도 포함할 수 없습니다.'
-    );
+  if (!ENGLISH_REGEX.test(carName)) {
+    throw new Error(ERROR_MESSAGES.carNameFormat);
   }
-
-  if (carName.length < 2 || carName.length > 5) {
-    throw new Error('[ERROR] 차 이름은 2자 이상 5자 이하로 입력해주세요.');
+  if (
+    carName.length < MIN_CAR_NAME_LENGTH ||
+    carName.length > MAX_CAR_NAME_LENGTH
+  ) {
+    throw new Error(ERROR_MESSAGES.carNameLength);
   }
 };
 
 export const validateCarNames = (carNames) => {
-  if (carNames.length < 2 || carNames.length > 5) {
-    throw new Error('[ERROR] 차 이름은 2개 이상 5개 이하로 입력해주세요.');
+  if (carNames.length < MIN_CAR_COUNT || carNames.length > MAX_CAR_COUNT) {
+    throw new Error(ERROR_MESSAGES.carNameCount);
   }
 
   carNames.forEach(isValidCarName);
 
   if (carNames.length !== new Set(carNames).size) {
-    throw new Error('[ERROR] 차 이름은 중복될 수 없습니다.');
+    throw new Error(ERROR_MESSAGES.carNameDuplicate);
   }
 };
 
 export const validateRaceCount = (raceCount) => {
-  if (raceCount < 1 || isNaN(raceCount) || raceCount > 10) {
-    throw new Error(
-      '[ERROR] 시도할 횟수는 1회 이상 10회 이하의 숫자만 입력할 수 있습니다.'
-    );
+  if (
+    raceCount < MIN_RACE_COUNT ||
+    isNaN(raceCount) ||
+    raceCount > MAX_RACE_COUNT
+  ) {
+    throw new Error(ERROR_MESSAGES.raceCount);
   }
 };
