@@ -26,6 +26,13 @@ class RacingGameView {
   printResultMessage() {
     Console.print('실행 결과');
   }
+
+  printRaceResults(results) {
+    results.forEach(({ name, position }) => {
+      Console.print(`${name} : ${position}`);
+    });
+    Console.print('');
+  }
 }
 
 export default RacingGameView;
