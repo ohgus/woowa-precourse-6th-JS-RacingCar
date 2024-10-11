@@ -20,9 +20,8 @@ class Car {
 }
 
 class RacingGameModel {
-  constructor(carNames, raceCount) {
+  constructor(carNames) {
     this.cars = carNames.map((name) => new Car(name));
-    this.raceCount = raceCount;
   }
 
   raceOnce() {
