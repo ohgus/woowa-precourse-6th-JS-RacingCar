@@ -1,4 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
+import { validateCarNames } from './validator.js';
 
 class RacingGameView {
   async inputCarNames() {
@@ -7,6 +8,8 @@ class RacingGameView {
     );
 
     const carNames = input.split(',').map((name) => name.trim());
+
+    validateCarNames(carNames);
 
     const cars = {};
     carNames.forEach((name) => {
