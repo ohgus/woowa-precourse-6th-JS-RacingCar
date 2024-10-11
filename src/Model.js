@@ -14,3 +14,16 @@ class Car {
     }
   }
 }
+
+class RacingGameModel {
+  constructor(carNames, raceCount) {
+    this.cars = carNames.map((name) => new Car(name));
+    this.raceCount = raceCount;
+  }
+
+  raceOnce() {
+    this.cars.forEach((car) => car.move());
+  }
+}
+
+export default RacingGameModel;
