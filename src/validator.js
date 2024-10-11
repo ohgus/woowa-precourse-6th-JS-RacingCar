@@ -12,8 +12,8 @@ export const validateCarNames = (carNames) => {
       );
     }
 
-    if (carName.length < 2 || carName.length > 10) {
-      throw new Error('[ERROR] 차 이름은 2자 이상 10자 이하로 입력해주세요.');
+    if (carName.length < 2 || carName.length > 5) {
+      throw new Error('[ERROR] 차 이름은 2자 이상 5자 이하로 입력해주세요.');
     }
   }
 
