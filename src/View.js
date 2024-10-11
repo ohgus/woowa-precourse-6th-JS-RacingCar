@@ -33,6 +33,10 @@ class RacingGameView {
     });
     Console.print('');
   }
+
+  printWinners(winners) {
+    Console.print(`최종 우승자 : ${winners.join(', ')}`);
+  }
 }
 
 export default RacingGameView;
