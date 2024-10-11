@@ -27,6 +27,10 @@ class RacingGameView {
 
     return raceCount;
   }
+
+  printResultMessage() {
+    Console.print('실행 결과');
+  }
 }
 
 export default RacingGameView;
