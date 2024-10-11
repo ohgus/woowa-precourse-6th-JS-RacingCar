@@ -28,10 +28,10 @@ class RacingGameView {
   }
 
   printRaceResults(results) {
-    results.forEach(({ name, position }) => {
-      Console.print(`${name} : ${position}`);
-    });
-    Console.print('');
+    const resultString = results.map(
+      ({ name, position }) => `${name} : ${position}`
+    );
+    Console.print(resultString.join('\n') + '\n');
   }
 
   printWinners(winners) {
