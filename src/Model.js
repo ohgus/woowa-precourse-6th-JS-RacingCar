@@ -35,6 +35,14 @@ class RacingGameModel {
       position: car.getPosition(),
     }));
   }
+
+  getWinner() {
+    const maxPosition = Math.max(...this.cars.map((car) => car.position));
+
+    return this.cars
+      .filter((car) => car.position === maxPosition)
+      .map((car) => car.name);
+  }
 }
 
 export default RacingGameModel;
