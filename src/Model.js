@@ -27,6 +27,14 @@ class RacingGameModel {
 
   raceOnce() {
     this.cars.forEach((car) => car.move());
+    return this.getResults();
+  }
+
+  getResults() {
+    return this.cars.map((car) => ({
+      name: car.name,
+      position: car.getPosition(),
+    }));
   }
 }
 
