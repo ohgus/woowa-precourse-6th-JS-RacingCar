@@ -13,6 +13,10 @@ class Car {
       this.position += 1;
     }
   }
+
+  getPosition() {
+    return '-'.repeat(this.position);
+  }
 }
 
 class RacingGameModel {
